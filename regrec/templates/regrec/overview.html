@@ -1,0 +1,11 @@
+{% extends "regrec/results.html" %}
+
+{% block results_tab %}
+  <h1>Results for {{ event.name }}</h1>
+
+  <ul>
+    {% for yacht in event.yachts.all %}
+    <li>{{ yacht.name }}, {{ yacht.model }}, {{ yacht.yardstick }}, {{ yacht.skipper }}, {{ yacht.result }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

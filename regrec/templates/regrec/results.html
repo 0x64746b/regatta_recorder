@@ -1,11 +1,10 @@
 {% extends "regrec/base.html" %}
 
 {% block body %}
-  <h1>Results for {{ event.name }}</h1>
-
-  <ul>
-    {% for yacht in event.yachts.all %}
-    <li>{{ yacht.name }}, {{ yacht.model }}, {{ yacht.yardstick }}, {{ yacht.skipper }}, {{ yacht.result }}</li>
-    {% endfor %}
+  <ul class="nav nav-tabs">
+    <li role="presentation"><a href="{% url 'results_overview' event.id %}">Overview</a></li>
   </ul>
+
+  {% block results_tab %}{% endblock %}
+
 {% endblock %}

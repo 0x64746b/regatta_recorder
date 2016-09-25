@@ -9,5 +9,5 @@ def list_events(request):
     return render(request, 'regrec/events.html', {'events': Event.objects.all()})
 
 
-def show_results(request, event_id):
-    return render(request, 'regrec/results.html', {'event': Event.objects.get(id=int(event_id))})
+def show_results_overview(request, event_id):
+    return render(request, 'regrec/overview.html', {'event': Event.objects.get(id=int(event_id))})

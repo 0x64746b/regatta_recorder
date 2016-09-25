@@ -58,7 +58,7 @@ class Run(models.Model):
     yacht = models.ForeignKey(Yacht, on_delete=models.CASCADE, related_name='runs', verbose_name=_('yacht'))
     start_time = models.DateTimeField(verbose_name=_('start time'))
     finish_time = models.DateTimeField(verbose_name=_('finish time'))
-    comment = models.TextField(verbose_name=_('note'))
+    note = models.CharField(max_length=128, blank=True, null=True, verbose_name=_('note'))
 
     class Meta:
         verbose_name = _('run')

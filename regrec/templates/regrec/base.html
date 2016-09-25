@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 
+{% load i18n %}
 {% load static %}
 
 <html lang="en">
@@ -44,8 +45,8 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><a href="{% url 'events' %}">Events</a></li>
-            <li><a href="{% url 'admin:index' %}">Admin</a></li>
+            <li><a href="{% url 'events' %}">{% trans "Events" %}</a></li>
+            <li><a href="{% url 'admin:index' %}">{% trans "Admin" %}</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

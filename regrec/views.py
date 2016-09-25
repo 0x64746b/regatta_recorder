@@ -2,7 +2,7 @@
 
 from django.shortcuts import render
 
-from .models import Event
+from .models import Event, Race
 
 
 def list_events(request):
@@ -11,3 +11,8 @@ def list_events(request):
 
 def show_results_overview(request, event_id):
     return render(request, 'regrec/overview.html', {'event': Event.objects.get(id=int(event_id))})
+
+
+def show_results_race(request, race_id):
+    race = Race.objects.get(id=int(race_id))
+    return render(request, 'regrec/race.html', {'event': race.event, 'race': race})

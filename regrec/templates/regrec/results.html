@@ -3,6 +3,9 @@
 {% block body %}
   <ul class="nav nav-tabs">
     <li role="presentation"><a href="{% url 'results_overview' event.id %}">Overview</a></li>
+    {% for race in event.races.all %}
+    <li role="presentation"><a href="{% url 'results_race' race.id %}">{{ race.name }}</a></li>
+    {% endfor %}
   </ul>
 
   {% block results_tab %}{% endblock %}

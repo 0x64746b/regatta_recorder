@@ -19,6 +19,7 @@ from django.contrib import admin
 
 
 urlpatterns = i18n_patterns(
+    url(r'', include('regrec.urls')),
     url(r'^admin/', include(admin.site.urls)),
 )
 

@@ -1,0 +1,14 @@
+<html>
+  <body>
+    {% if not events %}
+    There are no events, yet.
+    {% else %}
+    <h1>Select an event</h1>
+    <ul>
+      {% for event in events %}
+      <li><a href="{% url 'results' event.id %}">{{ event.name }}</a></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </body>
+</html>

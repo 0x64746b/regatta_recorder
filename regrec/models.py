@@ -1,5 +1,7 @@
 # coding: utf-8
 
+from datetime import timedelta
+
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
@@ -37,6 +39,15 @@ class Yacht(models.Model):
     class Meta:
         verbose_name = _('yacht')
         verbose_name_plural = _('yachts')
+
+    @property
+    def result(self):
+        result = timedelta()
+
+        for run in self.runs.all():
+            result += run.yardstick_time
+
+        return result
 
     def __str__(self):
         return _('{yacht} [{model}]').format(yacht=self.name, model=self.model)

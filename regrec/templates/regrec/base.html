@@ -44,7 +44,7 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="{% url 'events' %}">Home</a></li>
+            <li><a href="{% url 'events' %}">Home</a></li>
             <li><a href="{% url 'admin:index' %}">Admin</a></li>
           </ul>
         </div><!--/.nav-collapse -->
@@ -67,5 +67,13 @@
     <script src="{% static 'regrec/js/bootstrap.min.js' %}"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="{% static 'regrec/js/ie10-viewport-bug-workaround.js' %}"></script>
+
+    <!-- set active link -->
+    <script>
+    $(document).ready(function() {
+        $('a[href="' + this.location.pathname + '"]').parent().addClass('active');
+    });
+    </script>
+
   </body>
 </html>

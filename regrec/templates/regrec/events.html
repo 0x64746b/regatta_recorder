@@ -1,10 +1,12 @@
 {% extends "regrec/base.html" %}
 
+{% load i18n %}
+
 {% block body %}
     {% if not events %}
-    There are no events, yet.
+    <p>{% trans "There are no events, yet" %}</p>.
     {% else %}
-    <h1>Select an event</h1>
+    <h1>{% trans "Select an Event" %}</h1>
     <ul>
       {% for event in events %}
       <li><a href="{% url 'results_overview' event.id %}">{{ event.name }}</a></li>

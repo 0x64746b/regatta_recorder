@@ -1,6 +1,11 @@
 body {
   padding-top: 50px;
 }
+
+th {
+  text-align: center;
+}
+
 .regrec {
   padding: 40px 15px;
   text-align: center;

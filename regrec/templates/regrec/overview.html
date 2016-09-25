@@ -3,9 +3,22 @@
 {% block results_tab %}
   <h1>Results for {{ event.name }}</h1>
 
-  <ul>
+  <table class="table table-striped table-hover">
+    <tr>
+      <th>Yacht</th>
+      <th>Type</th>
+      <th>Yardstick</th>
+      <th>Skipper</th>
+      <th>Overall Result</th>
+    </tr>
     {% for yacht in event.yachts.all %}
-    <li>{{ yacht.name }}, {{ yacht.model }}, {{ yacht.yardstick }}, {{ yacht.skipper }}, {{ yacht.result }}</li>
+    <tr>
+      <td>{{ yacht.name }}</td>
+      <td>{{ yacht.model }}</td>
+      <td>{{ yacht.yardstick }}</td>
+      <td>{{ yacht.skipper }}</td>
+      <td>{{ yacht.result }}</td>
+    </tr>
     {% endfor %}
-  </ul>
+  </table>
 {% endblock %}

@@ -1,11 +1,28 @@
 {% extends "regrec/results.html" %}
 
 {% block results_tab %}
-  <h1>{{ race.name }}</h1>
-
-  <ul>
+  <table class="table table-striped table-hover">
+    <tr>
+      <th>Yacht</th>
+      <th>Start Time</th>
+      <th>Finish Time</th>
+      <th>Duration</th>
+      <th>Model</th>
+      <th>Yardstick</th>
+      <th>Yardstick Time</th>
+      <th>Note</th>
+    </tr>
     {% for run in race.runs.all %}
-    <li>{{ run.yacht.name }}, {{ run.start_time.time }}, {{ run.finish_time.time }}, {{ run.duration }}, {{ run.yacht.model }}, {{ run.yacht.yardstick }}, {{ run.yardstick_time }}, {{ run.comment }}</li>
+    <tr>
+      <td>{{ run.yacht.name }}</td>
+      <td>{{ run.start_time.time }}</td>
+      <td>{{ run.finish_time.time }}</td>
+      <td>{{ run.duration }}</td>
+      <td>{{ run.yacht.model }}</td>
+      <td>{{ run.yacht.yardstick }}</td>
+      <td>{{ run.yardstick_time }}</td>
+      <td>{{ run.comment }}</td>
+    </tr>
     {% endfor %}
-  </ul>
+  </table>
 {% endblock %}

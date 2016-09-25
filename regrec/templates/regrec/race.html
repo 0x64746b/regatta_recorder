@@ -17,7 +17,7 @@
       <th>{% trans "Yardstick Time" %}</th>
       <th>{% trans "Note" %}</th>
     </tr>
-    {% for run in race.runs.all %}
+    {% for run in race.runs.all|dictsort:"yardstick_time" %}
     <tr>
       <td>{{ run.yacht.name }}</td>
       <td>{{ run.start_time.time }}</td>

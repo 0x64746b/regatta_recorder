@@ -14,7 +14,7 @@
       <th>{% trans "Skipper" %}</th>
       <th>{% trans "Overall Result" %}</th>
     </tr>
-    {% for yacht in event.yachts.all %}
+    {% for yacht in event.yachts.all|dictsort:"result" %}
     <tr>
       <td>{{ yacht.name }}</td>
       <td>{{ yacht.model }}</td>

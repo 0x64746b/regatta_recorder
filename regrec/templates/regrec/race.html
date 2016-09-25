@@ -1,5 +1,6 @@
 {% extends "regrec/results.html" %}
 
+{% load i18n %}
 {% load regrec_timedeltas %}
 
 {% block nav_title %}{{ event.name }}{% endblock%}
@@ -7,14 +8,14 @@
 {% block results_tab %}
   <table class="table table-striped table-hover">
     <tr>
-      <th>Yacht</th>
-      <th>Start Time</th>
-      <th>Finish Time</th>
-      <th>Duration</th>
-      <th>Model</th>
-      <th>Yardstick</th>
-      <th>Yardstick Time</th>
-      <th>Note</th>
+      <th>{% trans "Yacht" %}</th>
+      <th>{% trans "Start Time" %}</th>
+      <th>{% trans "Finish Time" %}</th>
+      <th>{% trans "Duration" %}</th>
+      <th>{% trans "Type" %}</th>
+      <th>{% trans "Yardstick" %}</th>
+      <th>{% trans "Yardstick Time" %}</th>
+      <th>{% trans "Note" %}</th>
     </tr>
     {% for run in race.runs.all %}
     <tr>

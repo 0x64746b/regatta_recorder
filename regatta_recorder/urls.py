@@ -22,5 +22,6 @@ from django.contrib import admin
 urlpatterns = i18n_patterns(
     url(r'', include('regrec.urls')),
     url(_(r'^admin/'), include(admin.site.urls)),
+    prefix_default_language=False
 )
 

@@ -7,10 +7,13 @@
     <p>{% trans "There are no events, yet" %}</p>.
     {% else %}
     <h1>{% trans "Select an Event" %}</h1>
-    <ul>
-      {% for event in events %}
-      <li><a href="{% url 'results_overview' event.id %}">{{ event.name }}</a></li>
-      {% endfor %}
-    </ul>
+
+    <div class="events">
+        <ul>
+            {% for event in events %}
+            <li><a href="{% url 'results_overview' event.id %}">{{ event.name }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
     {% endif %}
 {% endblock %}

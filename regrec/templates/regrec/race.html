@@ -1,5 +1,7 @@
 {% extends "regrec/results.html" %}
 
+{% load regrec_timedeltas %}
+
 {% block nav_title %}{{ event.name }}{% endblock%}
 
 {% block results_tab %}
@@ -19,10 +21,10 @@
       <td>{{ run.yacht.name }}</td>
       <td>{{ run.start_time.time }}</td>
       <td>{{ run.finish_time.time }}</td>
-      <td>{{ run.duration }}</td>
+      <td>{{ run.duration|crop_timedelta }}</td>
       <td>{{ run.yacht.model }}</td>
       <td>{{ run.yacht.yardstick }}</td>
-      <td>{{ run.yardstick_time }}</td>
+      <td>{{ run.yardstick_time|crop_timedelta }}</td>
       <td>{{ run.comment }}</td>
     </tr>
     {% endfor %}

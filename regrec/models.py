@@ -16,7 +16,7 @@ class Event(models.Model):
 
 
 class Race(models.Model):
-    event = models.ForeignKey(Event, on_delete=models.CASCADE)
+    event = models.ForeignKey(Event, on_delete=models.CASCADE, related_name='races')
     name = models.CharField(max_length=128)
 
     class Meta:
@@ -28,7 +28,7 @@ class Race(models.Model):
 
 
 class Yacht(models.Model):
-    event = models.ForeignKey(Event, on_delete=models.CASCADE, verbose_name=_('event'))
+    event = models.ForeignKey(Event, on_delete=models.CASCADE, related_name='yachts', verbose_name=_('event'))
     name = models.CharField(max_length=128, verbose_name=_('name'))
     model = models.CharField(max_length=128, verbose_name=_('model'))
     yardstick = models.PositiveSmallIntegerField(verbose_name=_('yardstick'))
@@ -43,8 +43,8 @@ class Yacht(models.Model):
 
 
 class Run(models.Model):
-    race = models.ForeignKey(Race, on_delete=models.CASCADE, verbose_name=_('race'))
-    yacht = models.ForeignKey(Yacht, on_delete=models.CASCADE, verbose_name=_('yacht'))
+    race = models.ForeignKey(Race, on_delete=models.CASCADE, related_name='runs', verbose_name=_('race'))
+    yacht = models.ForeignKey(Yacht, on_delete=models.CASCADE, related_name='runs', verbose_name=_('yacht'))
     start_time = models.DateTimeField(verbose_name=_('start time'))
     finish_time = models.DateTimeField(verbose_name=_('finish time'))
     comment = models.TextField(verbose_name=_('note'))

@@ -1,5 +1,6 @@
-<html>
-  <body>
+{% extends "regrec/base.html" %}
+
+{% block body %}
     {% if not events %}
     There are no events, yet.
     {% else %}
@@ -10,5 +11,4 @@
       {% endfor %}
     </ul>
     {% endif %}
-  </body>
-</html>
+{% endblock %}

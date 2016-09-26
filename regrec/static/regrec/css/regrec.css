@@ -18,3 +18,7 @@ th {
 .results {
   padding-top: 40px;
 }
+
+.dataTable > thead > tr > th[class*="sort"]:after {
+    content: "" !important;
+}

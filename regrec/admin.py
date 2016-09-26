@@ -22,12 +22,6 @@ class RaceAdmin(admin.ModelAdmin):
         RunInline,
     ]
 
-    class Media:
-        js = [
-            'regrec/js/jquery-3.1.1.min.js',
-            'regrec/js/race_admin.js',
-        ]
-
 
 admin.site.register(Event, EventAdmin)
 admin.site.register(Race, RaceAdmin)

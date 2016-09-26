@@ -13,5 +13,17 @@
   <div class="results">
     {% block results_tab %}{% endblock %}
   </div>
+{% endblock %}
 
+{% block extra_js %}
+  <script>
+    $(document).ready(function() {
+      $("#sortable-table").dataTable({
+        "order": {% block default_ordering %}[[0, 'asc']]{% endblock %},
+        "bPaginate": false,
+        "bInfo": false,
+        "bFilter": false,
+      });
+    });
+  </script>
 {% endblock %}

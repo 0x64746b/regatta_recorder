@@ -44,25 +44,25 @@ class Yacht(models.Model):
     def result(self):
         result = timedelta()
 
-        for run in self.runs.all():
-            result += run.yardstick_time
+        for time in self.times.all():
+            result += time.yardstick_time
 
         return result
 
     def __str__(self):
-        return _('{yacht} [{model}]').format(yacht=self.name, model=self.model)
+        return _('{yacht} at {event}').format(yacht=self.name, event=self.event)
 
 
-class Run(models.Model):
-    race = models.ForeignKey(Race, on_delete=models.CASCADE, related_name='runs', verbose_name=_('race'))
-    yacht = models.ForeignKey(Yacht, on_delete=models.CASCADE, related_name='runs', verbose_name=_('yacht'))
+class Time(models.Model):
+    race = models.ForeignKey(Race, on_delete=models.CASCADE, related_name='times', verbose_name=_('race'))
+    yacht = models.ForeignKey(Yacht, on_delete=models.CASCADE, related_name='times', verbose_name=_('yacht'))
     start_time = models.DateTimeField(verbose_name=_('start time'))
     finish_time = models.DateTimeField(verbose_name=_('finish time'))
     note = models.CharField(max_length=128, blank=True, null=True, verbose_name=_('note'))
 
     class Meta:
-        verbose_name = _('run')
-        verbose_name_plural = _('runs')
+        verbose_name = _('time')
+        verbose_name_plural = _('times')
 
     @property
     def duration(self):

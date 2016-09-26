@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Event, Race, Run, Yacht
+from .models import Event, Race, Time, Yacht
 
 
 class YachtInline(admin.TabularInline):
@@ -13,20 +13,14 @@ class EventAdmin(admin.ModelAdmin):
     ]
 
 
-class RunInline(admin.TabularInline):
-    model = Run
+class TimeInline(admin.TabularInline):
+    model = Time
 
 
 class RaceAdmin(admin.ModelAdmin):
     inlines = [
-        RunInline,
+        TimeInline,
     ]
-
-    class Media:
-        js = [
-            'regrec/js/jquery-3.1.1.min.js',
-            'regrec/js/race_admin.js',
-        ]
 
 
 admin.site.register(Event, EventAdmin)

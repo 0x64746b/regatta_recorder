@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-25 17:25+0200\n"
+"POT-Creation-Date: 2016-09-27 00:05+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -65,8 +65,8 @@ msgstr "Yachten"
 
 #: models.py:53
 #, python-brace-format
-msgid "{yacht} [{model}]"
-msgstr "{yacht} [{model}]"
+msgid "{yacht} at {event}"
+msgstr "{yacht} bei {event}"
 
 #: models.py:59
 msgid "start time"
@@ -81,12 +81,12 @@ msgid "note"
 msgstr "Notiz"
 
 #: models.py:64
-msgid "run"
-msgstr "Durchgang"
+msgid "time"
+msgstr "Zeit"
 
 #: models.py:65
-msgid "runs"
-msgstr "Durchgänge"
+msgid "times"
+msgstr "Zeiten"
 
 #: models.py:76
 #, python-brace-format
@@ -109,43 +109,43 @@ msgstr "Es sind noch keine Veranstaltungen eingetragen"
 msgid "Select an Event"
 msgstr "Wähle eine Veranstaltung"
 
-#: templates/regrec/overview.html:11 templates/regrec/race.html:11
+#: templates/regrec/overview.html:12 templates/regrec/race.html:12
 msgid "Yacht"
 msgstr "Yacht"
 
-#: templates/regrec/overview.html:12 templates/regrec/race.html:15
+#: templates/regrec/overview.html:13 templates/regrec/race.html:16
 msgid "Type"
 msgstr "Typ"
 
-#: templates/regrec/overview.html:13 templates/regrec/race.html:16
+#: templates/regrec/overview.html:14 templates/regrec/race.html:17
 msgid "Yardstick"
 msgstr "Yardstick"
 
-#: templates/regrec/overview.html:14
+#: templates/regrec/overview.html:15
 msgid "Skipper"
 msgstr "Skipper"
 
-#: templates/regrec/overview.html:15
+#: templates/regrec/overview.html:16
 msgid "Overall Result"
 msgstr "Gesamtergebnis"
 
-#: templates/regrec/race.html:12
+#: templates/regrec/race.html:13
 msgid "Start Time"
 msgstr "Startzeit"
 
-#: templates/regrec/race.html:13
+#: templates/regrec/race.html:14
 msgid "Finish Time"
 msgstr "Zielzeit"
 
-#: templates/regrec/race.html:14
+#: templates/regrec/race.html:15
 msgid "Duration"
 msgstr "Dauer"
 
-#: templates/regrec/race.html:17
+#: templates/regrec/race.html:18
 msgid "Yardstick Time"
 msgstr "Yardstickzeit"
 
-#: templates/regrec/race.html:18
+#: templates/regrec/race.html:19
 msgid "Note"
 msgstr "Notiz"
 

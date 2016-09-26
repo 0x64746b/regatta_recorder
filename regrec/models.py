@@ -50,7 +50,7 @@ class Yacht(models.Model):
         return result
 
     def __str__(self):
-        return _('{yacht} [{model}]').format(yacht=self.name, model=self.model)
+        return _('{yacht} at {event}').format(yacht=self.name, event=self.event)
 
 
 class Run(models.Model):

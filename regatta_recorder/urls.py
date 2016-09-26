@@ -13,6 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+from ajax_select import urls as ajax_select_urls
 from django.conf.urls import include, url
 from django.conf.urls.i18n import i18n_patterns
 from django.utils.translation import ugettext_lazy as _
@@ -22,6 +23,7 @@ from django.contrib import admin
 urlpatterns = i18n_patterns(
     url(r'', include('regrec.urls')),
     url(_(r'^admin/'), include(admin.site.urls)),
+    url(r'^ajax_select/', include(ajax_select_urls)),
     prefix_default_language=False
 )
 

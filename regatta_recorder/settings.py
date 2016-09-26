@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'regrec.apps.RegRecConfig',
+    'ajax_select',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

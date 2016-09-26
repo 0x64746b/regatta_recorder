@@ -20,16 +20,16 @@
       </tr>
     </thead>
     <tbody>
-      {% for run in race.runs.all %}
+      {% for time in race.times.all %}
       <tr>
-        <td>{{ run.yacht.name }}</td>
-        <td>{{ run.start_time.time }}</td>
-        <td>{{ run.finish_time.time }}</td>
-        <td>{{ run.duration|crop_timedelta }}</td>
-        <td>{{ run.yacht.model }}</td>
-        <td>{{ run.yacht.yardstick }}</td>
-        <td>{{ run.yardstick_time|crop_timedelta }}</td>
-        <td>{{ run.comment }}</td>
+        <td>{{ time.yacht.name }}</td>
+        <td>{{ time.start_time.time }}</td>
+        <td>{{ time.finish_time.time }}</td>
+        <td>{{ time.duration|crop_timedelta }}</td>
+        <td>{{ time.yacht.model }}</td>
+        <td>{{ time.yacht.yardstick }}</td>
+        <td>{{ time.yardstick_time|crop_timedelta }}</td>
+        <td>{{ time.comment }}</td>
       </tr>
       {% endfor %}
     </tbody>

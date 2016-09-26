@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-26 23:52+0200\n"
+"POT-Creation-Date: 2016-09-27 00:05+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -81,12 +81,12 @@ msgid "note"
 msgstr "Notiz"
 
 #: models.py:64
-msgid "run"
-msgstr "Durchgang"
+msgid "time"
+msgstr "Zeit"
 
 #: models.py:65
-msgid "runs"
-msgstr "Durchgänge"
+msgid "times"
+msgstr "Zeiten"
 
 #: models.py:76
 #, python-brace-format

@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Event, Race, Run, Yacht
+from .models import Event, Race, Time, Yacht
 
 
 class YachtInline(admin.TabularInline):
@@ -13,13 +13,13 @@ class EventAdmin(admin.ModelAdmin):
     ]
 
 
-class RunInline(admin.TabularInline):
-    model = Run
+class TimeInline(admin.TabularInline):
+    model = Time
 
 
 class RaceAdmin(admin.ModelAdmin):
     inlines = [
-        RunInline,
+        TimeInline,
     ]
 
 

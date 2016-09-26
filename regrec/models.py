@@ -73,4 +73,4 @@ class Time(models.Model):
         return self.duration * 100 / self.yacht.yardstick
 
     def __str__(self):
-        return _('{yacht} in {race}').format(yacht=self.yacht, race=self.race)
+        return _('{yacht} in {race}').format(yacht=self.yacht.name, race=self.race)

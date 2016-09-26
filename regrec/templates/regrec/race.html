@@ -6,28 +6,36 @@
 {% block nav_title %}{{ event.name }}{% endblock%}
 
 {% block results_tab %}
-  <table class="table table-striped table-hover">
-    <tr>
-      <th>{% trans "Yacht" %}</th>
-      <th>{% trans "Start Time" %}</th>
-      <th>{% trans "Finish Time" %}</th>
-      <th>{% trans "Duration" %}</th>
-      <th>{% trans "Type" %}</th>
-      <th>{% trans "Yardstick" %}</th>
-      <th>{% trans "Yardstick Time" %}</th>
-      <th>{% trans "Note" %}</th>
-    </tr>
-    {% for run in race.runs.all|dictsort:"yardstick_time" %}
-    <tr>
-      <td>{{ run.yacht.name }}</td>
-      <td>{{ run.start_time.time }}</td>
-      <td>{{ run.finish_time.time }}</td>
-      <td>{{ run.duration|crop_timedelta }}</td>
-      <td>{{ run.yacht.model }}</td>
-      <td>{{ run.yacht.yardstick }}</td>
-      <td>{{ run.yardstick_time|crop_timedelta }}</td>
-      <td>{{ run.comment }}</td>
-    </tr>
-    {% endfor %}
+  <table id="sortable-table" class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>{% trans "Yacht" %}</th>
+        <th>{% trans "Start Time" %}</th>
+        <th>{% trans "Finish Time" %}</th>
+        <th>{% trans "Duration" %}</th>
+        <th>{% trans "Type" %}</th>
+        <th>{% trans "Yardstick" %}</th>
+        <th>{% trans "Yardstick Time" %}</th>
+        <th>{% trans "Note" %}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for run in race.runs.all %}
+      <tr>
+        <td>{{ run.yacht.name }}</td>
+        <td>{{ run.start_time.time }}</td>
+        <td>{{ run.finish_time.time }}</td>
+        <td>{{ run.duration|crop_timedelta }}</td>
+        <td>{{ run.yacht.model }}</td>
+        <td>{{ run.yacht.yardstick }}</td>
+        <td>{{ run.yardstick_time|crop_timedelta }}</td>
+        <td>{{ run.comment }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
   </table>
+{% endblock %}
+
+{% block default_ordering %}
+[[6, 'asc'], [5, 'desc']]
 {% endblock %}

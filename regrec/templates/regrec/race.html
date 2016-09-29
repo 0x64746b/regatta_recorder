@@ -2,6 +2,7 @@
 
 {% load i18n %}
 {% load regrec_timedeltas %}
+{% load tz %}
 
 {% block nav_title %}{{ event.name }}{% endblock%}
 
@@ -23,8 +24,8 @@
       {% for time in race.times.all %}
       <tr>
         <td>{{ time.yacht.name }}</td>
-        <td>{{ time.start_time.time }}</td>
-        <td>{{ time.finish_time.time }}</td>
+        <td>{{ time.start_time|time }}</td>
+        <td>{{ time.finish_time|time }}</td>
         <td>{{ time.duration|crop_timedelta }}</td>
         <td>{{ time.yacht.model }}</td>
         <td>{{ time.yacht.yardstick }}</td>
